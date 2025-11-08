@@ -10,13 +10,16 @@
     <script>
         var depth = 5
         var curl = Math.PI / 3
-        var breadth = 2
+        var breadth = 4
         var spread = Math.PI / 3
 
         function branch(d) {
+            push()
             line(0, 0, 0, 1)
 
             if (d > 1) {
+                push()
+                
                 translate(0, 1)
                 rotate(curl)
                 scale(0.5)
@@ -30,7 +33,15 @@
                 rotate(-curl)
                 scale(2)
                 translate(0, -1)
+
+                pop()
+            } else {
+                translate(0, 1)
+                noStroke()
+                fill(255, 0, 0)
+                ellipse(0, 0, 0.5, 1)
             }
+            pop()
         }
 
         function setup() {
@@ -43,7 +54,7 @@
 
             background(0)
 
-            stroke(255)
+            stroke(50, 255, 200, 150)
 
             translate(200, 400)
 
@@ -51,7 +62,7 @@
 
             scale(200)
 
-            strokeWeight(0.1)
+            strokeWeight(0.15)
 
             branch(depth)
         }
