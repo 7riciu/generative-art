@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tree</title>
+</head>
+    <script src="https://cdn.jsdelivr.net/npm/p5@1.0.0/lib/p5.min.js"></script>
+
+<script>
+    function setup() {
+        createCanvas (400, 400)
+    }
+
+    function draw() {
+        background(240)
+
+        fill(0, 0, 2)
+        rect(20, 20, 20, 20)
+
+        strokeWeight(30)
+        translate(200, 400)
+
+        stroke(200, 40, 15)
+        line(0, 0, 0, -200)
+
+        translate(0, -200)
+
+        stroke(80, 200, 50)
+        line(0, 0, 0, -40)
+    }
+</script>
